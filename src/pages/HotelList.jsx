@@ -23,6 +23,7 @@ background-color:${(props)=>props.theme.backgroundmain};
 const HotelList =()=>{
     return(
         <HotelSection>
+            <Container>
 
             <Crumb>
             <Breadcrumb>
@@ -41,7 +42,7 @@ const HotelList =()=>{
             </div>
             </Hoteldiv>
             
-
+        </Container>
        
 
 
