@@ -66,7 +66,9 @@ background-color:${(props)=>props.theme.pricebg}
 margin-bottom:30px;
 border-bottom:2px solid rgba(230, 232, 236, 1);
 `
-
+const Creditimg = styled.img`
+margin:40px 20px 40px 0;
+`
 const YourTour =()=>{
     const {t} = useTranslation()
     return(
@@ -88,6 +90,11 @@ const YourTour =()=>{
             <Creditbtn><img src="/assetts/img/image 328.png" alt="" /></Creditbtn>
             <Creditbtn><img src="/assetts/img/image 235.png" alt="" /></Creditbtn>
             </CreditBox>
+            <Creditimg src="/assetts/img/card 1.png" alt=""/>
+            <Creditimg src="/assetts/img/card 2.png" alt=""/>
+            <Form.Label >{t("cardNumber")}</Form.Label>
+            <Form.Control  placeholder="May 15 - 22, 2021"/>
+            
 
         </ConfirmMain>
 
