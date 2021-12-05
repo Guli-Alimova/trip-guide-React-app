@@ -1,0 +1,55 @@
+.nav-link{
+color: rgba(132, 135, 139, 1)!important;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
+  background-color: transparent !important;
+
+  
+}
+
+.dropdown-menu{
+  height: 224px;
+  width: 354px;
+  border-radius: 16px;
+  padding:30px;
+  margin-bottom:40px;
+ 
+ 
+} 
+.dropdown-item{
+    padding:0;
+    display: flex;
+    justify-content: space-between;
+    width: 322px;
+    color:rgba(119, 126, 144, 1);
+
+}
+
+.btn-group{
+    right:265px;
+}
+.btn-group>.btn {
+    margin:0;
+    padding:5px;
+    left:264px;
+}
+.nav-link:active{
+    border-bottom:2px solid blue;
+
+}
+
+
+.DayPickerInput input{
+    border:none;
+    background-color: transparent;
+    margin-left:13px; 
+}
+.css-1s2u09g-control{
+    border:none !important;
+    background-color: transparent !important;
+}

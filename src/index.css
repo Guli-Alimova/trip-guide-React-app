@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  font-family: DM Sans;;
+}
+.container{
+  width: 1110px;
+}
+*{
+  box-sizing: border-box;
+}
+
+

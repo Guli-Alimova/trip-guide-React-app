@@ -1,0 +1,9 @@
+.DayPickerInput input {
+    padding:14px 17px;
+    background-color: rgba(244, 245, 246, 1);
+    border-radius:10px;
+    width: 152px;
+    margin-right:10px;
+    margin-left:0;
+    margin-top:11px;
+}
