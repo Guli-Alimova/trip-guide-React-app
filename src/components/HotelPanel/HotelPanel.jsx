@@ -169,7 +169,7 @@ const HotelPanel = ({hotelObj})=>{
 
         <HotelSet>
             <HotelLeft>
-                <HotelImg  src = {`/assetts/img/${hotelObj.photo}`}   alt=""/>
+                <HotelImg  src = {`/assetts/img/${hotelObj.photo}`}   alt="hotel"/>
             </HotelLeft>
             <HotelRight>
                 <HotelTitle>{hotelObj.name}</HotelTitle>

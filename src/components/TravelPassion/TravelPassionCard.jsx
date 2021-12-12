@@ -54,7 +54,7 @@ const TravelPassionCard =()=>{
         <div className="passion-main">
         < PassionCard > 
         <Toplinergradient></Toplinergradient>
-        < PassionImg src="/assetts/img/Mask Group (4).png" alt="" />
+        < PassionImg src="/assetts/img/Mask Group (4).png" alt="cities" />
         <PassionReview>
        
         <PassionTitle>{t('passion_title')}</PassionTitle>
@@ -65,7 +65,7 @@ const TravelPassionCard =()=>{
 
          < PassionCard >
          <Toplinergradient></Toplinergradient>
-         < PassionImg src="/assetts/img/Mask Group (1).png" alt="" />
+         < PassionImg src="/assetts/img/Mask Group (1).png" alt="cities" />
          <PassionReview>
          <PassionTitle>{t('passion_title1')}</PassionTitle>
          <AiFillStar style={{ color: "#FFD166", fontSize: "22px" }} />
@@ -75,7 +75,7 @@ const TravelPassionCard =()=>{
 
           < PassionCard >
           <Toplinergradient></Toplinergradient>
-          < PassionImg src="/assetts/img/Mask Group (2).png" alt="" />
+          < PassionImg src="/assetts/img/Mask Group (2).png" alt="cities" />
           <PassionReview>
           <PassionTitle>{t('passion_title2')}</PassionTitle>
           <AiFillStar style={{ color: "#FFD166", fontSize: "22px" }} />
@@ -85,7 +85,7 @@ const TravelPassionCard =()=>{
 
            < PassionCard >
            <Toplinergradient></Toplinergradient>
-           < PassionImg src="/assetts/img/Mask Group (3).png" alt="" />
+           < PassionImg src="/assetts/img/Mask Group (3).png" alt="cities" />
            <PassionReview>
            <PassionTitle>{t('passion_title3')}</PassionTitle>
            <AiFillStar style={{ color: "#FFD166", fontSize: "22px" }} />

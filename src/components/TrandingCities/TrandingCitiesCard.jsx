@@ -91,7 +91,7 @@ const TrendingCitiesCard =({trandObj})=>{
     return(
         <TrandingCard>
             <TrandingLeft>
-               <img src = {`/assetts/img/${trandObj.photo}`} alt=""/> 
+               <img src = {`/assetts/img/${trandObj.photo}`} alt="trandcity"/> 
             </TrandingLeft> 
             <TrandingRight>
                 <TrandingTitle>{trandObj.name}</TrandingTitle>

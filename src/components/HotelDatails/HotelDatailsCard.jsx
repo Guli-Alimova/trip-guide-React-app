@@ -163,7 +163,7 @@ const HotelDatailsCard =({prop})=>{
             <HotelsCity><CgFlagAlt style={{ color: "rgba(132, 135, 139, 1)", fontSize: "13px" }}/>{prop.name}</HotelsCity>
             </HotelRaiting>
             <HotelImage>
-                <HotelPhoto src={`/assetts/img/${prop.photo}`} alt=""/> 
+                <HotelPhoto src={`/assetts/img/${prop.photo}`} alt="photo"/> 
                
             </HotelImage>  
         </HotelMainDatails>

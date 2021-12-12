@@ -22,7 +22,7 @@ const TopTourCard =({cityobj})=>{
     const {t} = useTranslation();
     return(
     <TopTourcard>
-    <img src={`/assetts/img/${cityobj.photo}`} width="100%" alt=""/>
+    <img src={`/assetts/img/${cityobj.photo}`} width="100%" alt="country"/>
     <Toplinergradient></Toplinergradient>
     <span className="top-span">{cityobj.country}</span>
     <h4 className="top-title">{cityobj.name}</h4>

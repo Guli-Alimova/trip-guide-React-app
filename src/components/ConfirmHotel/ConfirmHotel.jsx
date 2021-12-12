@@ -163,7 +163,7 @@ const ConfirmHotel =({prop})=>{
             <ConfirmHotelTitle>{prop.name} </ConfirmHotelTitle>
             <AiFillStar style={{ color: "#FFD166", fontSize: "22px" }} />
             <TrandingRaiting>{prop.rating}<span className="tranding-number" style={{color:"rgba(132, 135, 139, 1)" }}>  ( {prop.reviews} reviews)</span></TrandingRaiting>
-            <ConfirmHotelImg src={`/assetts/img/${prop.photo}`} alt=""/>
+            <ConfirmHotelImg src={`/assetts/img/${prop.photo}`} alt="nature"/>
             {/* </div> : "" } */}
             <ConfirmHotelplace>{t("bad")}</ConfirmHotelplace>
             <ConfirmChak>

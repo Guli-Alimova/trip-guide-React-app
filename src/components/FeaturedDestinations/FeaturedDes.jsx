@@ -151,10 +151,10 @@ const FeaturedDes =()=>{
     <FeaturedBox>
      <FeaturedCard>
       <FeaturedSpan>3.5</FeaturedSpan>
-      <FeaturedImage src="/assetts/img/image (1).png" width="870px" alt=""/><Toplinergradient1></Toplinergradient1>
+      <FeaturedImage src="/assetts/img/image (1).png" width="870px" alt="city"/><Toplinergradient1></Toplinergradient1>
       <div className="featured-active"> 
       <h3 className="featured-title1">{t("city-name")}</h3>
-      <img src="/assetts/img/avator.png" alt=""/>
+      <img src="/assetts/img/avator.png" alt="city"/>
       <span className="featured-activitie">196 {t("active")}</span>
      </div>
      </FeaturedCard>
@@ -162,10 +162,10 @@ const FeaturedDes =()=>{
      <FeaturedCard1>
      
      <FeaturedSpan>3.5</FeaturedSpan>
-      <FeaturedImage src="/assetts/img/image (2).png" width="408px"  alt=""/> <Toplinergradient></Toplinergradient>
+      <FeaturedImage src="/assetts/img/image (2).png" width="408px"  alt="city"/> <Toplinergradient></Toplinergradient>
       <div className="featured-active2">
       <h3 className="featured-title2">{t("city-name2")}</h3>
-      <img src="/assetts/img/avator.png" alt=""/>
+      <img src="/assetts/img/avator.png" alt="city"/>
       <span className="featured-activitie1">196 {t("active")}</span>
       </div>
      </FeaturedCard1> 
@@ -176,7 +176,7 @@ const FeaturedDes =()=>{
       <FeaturedImage src="/assetts/img/image (3).png" width="408px" alt=""/><Toplinergradient></Toplinergradient>
        <div className="featured-active3">
       <h3 className="featured-title3">{t("city-name3")}</h3>
-      <img src="/assetts/img/avator.png" alt=""/>
+      <img src="/assetts/img/avator.png" alt="city"/>
       <span className="featured-activitie1">196 {t("active")}</span>
       </div>
      </FeaturedCard1>
@@ -186,30 +186,30 @@ const FeaturedDes =()=>{
     <FeaturedCard2>
     <Toplinergradient2></Toplinergradient2>
     <FeaturedSpan>3.5</FeaturedSpan>
-      <FeaturedImage src="/assetts/img/image (4).png" width="270px" height="215px" alt=""/> 
+      <FeaturedImage src="/assetts/img/image (4).png" width="270px" height="215px" alt="city"/> 
       <div className="featured-active4">
       <h3 className="featured-title4">{t("city-name3")}</h3>
-      <img src="/assetts/img/avator.png" alt=""/>
+      <img src="/assetts/img/avator.png" alt="city"/>
       <span className="featured-activitie2">196  {t("active")}</span>
       </div>
     </FeaturedCard2>
     <FeaturedCard2>
     <Toplinergradient2></Toplinergradient2>
     <FeaturedSpan>3.5</FeaturedSpan>
-      <FeaturedImage src="/assetts/img/image (5).png" width="270px" height="215px" alt=""/>  
+      <FeaturedImage src="/assetts/img/image (5).png" width="270px" height="215px" alt="city"/>  
       <div className="featured-active5">
       <h3 className="featured-title4">{t("city-name5")}</h3>
-      <img src="/assetts/img/avator.png" alt=""/>
+      <img src="/assetts/img/avator.png" alt="city"/>
       <span className="featured-activitie2">196  {t("active")}</span>
       </div>
     </FeaturedCard2>
     <FeaturedCard2>
     <Toplinergradient2></Toplinergradient2>
     <FeaturedSpan>3.5</FeaturedSpan>
-      <FeaturedImage src="/assetts/img/image (6).png" width="270px" height="215px" alt=""/>    
+      <FeaturedImage src="/assetts/img/image (6).png" width="270px" height="215px" alt="city"/>    
       <div className="featured-active6">
       <h3 className="featured-title4">{t("city-name5")}</h3>
-      <img src="/assetts/img/avator.png"  alt=""/>
+      <img src="/assetts/img/avator.png"  alt="city"/>
       <span className="featured-activitie2">196  {t("active")}</span>
       </div>
     </FeaturedCard2>

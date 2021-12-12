@@ -218,7 +218,7 @@ const Congratulate = ({prop}) =>{
                        <Link to="/"> <button className="gobtn">{t("home")}</button></Link>
  
                     </ReservLeft>
-                    <CongrateImg src={`/assetts/img/${prop.photo}`} alt="" />
+                    <CongrateImg src={`/assetts/img/${prop.photo}`} alt="img1" />
 
 
 

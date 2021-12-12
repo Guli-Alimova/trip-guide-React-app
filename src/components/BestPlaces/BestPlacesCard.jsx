@@ -51,42 +51,42 @@ const BestPlacesCard =()=>{
     return(
         <>
         < BestPlace >
-        <BestImg src="/assetts/img/image.png" alt=""/>
+        <BestImg src="/assetts/img/image.png" alt="rasm1"/>
         <BestTitle>Batu, East Java</BestTitle>
         <BestText>86 {t("destination")}</BestText>
         </BestPlace>
          < BestPlace >
-         <BestImg src="/assetts/img/rasm.png" alt=""/>
+         <BestImg src="/assetts/img/rasm.png" alt="rasm2"/>
          <BestTitle>Kuta</BestTitle>
          <BestText>86 {t("destination")}</BestText>
          </BestPlace>
           < BestPlace >
-          <BestImg src="/assetts/img/rasm1.png" alt=""/>
+          <BestImg src="/assetts/img/rasm1.png" alt="rasm3"/>
           <BestTitle>Surabaya, East Java</BestTitle>
           <BestText>86 {t("destination")}</BestText>
           </BestPlace>
            < BestPlace >
-           <BestImg src="/assetts/img/rasm2.png" alt=""/>
+           <BestImg src="/assetts/img/rasm2.png" alt="rasm4"/>
            <BestTitle>Surabaya, East Java</BestTitle>
            <BestText>86  {t("destination")}</BestText>
            </BestPlace>
            < BestPlace >
-        <BestImg src="/assetts/img/rasm2.png" alt=""/>
+        <BestImg src="/assetts/img/rasm2.png" alt="rasm5"/>
         <BestTitle>Malang, East Java</BestTitle>
         <BestText>86  {t("destination")}</BestText>
         </BestPlace>
          < BestPlace >
-         <BestImg src="/assetts/img/rasm1.png" alt=""/>
+         <BestImg src="/assetts/img/rasm1.png" alt="rasm6"/>
          <BestTitle>Surabaya, East Java</BestTitle>
          <BestText>86 {t("destination")}</BestText>
          </BestPlace>
           < BestPlace >
-          <BestImg src="/assetts/img/rasm.png" alt=""/>
+          <BestImg src="/assetts/img/rasm.png" alt="rasm7"/>
           <BestTitle>Kuta</BestTitle>
           <BestText>86 {t("destination")}</BestText>
           </BestPlace>
            < BestPlace >
-           <BestImg src="/assetts/img/image.png" alt=""/>
+           <BestImg src="/assetts/img/image.png" alt="rasm8"/>
            <BestTitle>Batu, East Java</BestTitle>
            <BestText>86 {t("destination")}</BestText>
            </BestPlace>

@@ -150,13 +150,13 @@ const YourTour =({prop})=>{
             </TourDate>
             <CreditBox>
             < CreditCard>{t("credit")}</CreditCard>
-            <Creditbtn><img src="/assetts/img/image 329.png" alt="" /></Creditbtn>
-            <Creditbtn><img src="/assetts/img/image 327.png" alt="" /></Creditbtn>
-            <Creditbtn><img src="/assetts/img/image 328.png" alt="" /></Creditbtn>
-            <Creditbtn><img src="/assetts/img/image 235.png" alt="" /></Creditbtn>
+            <Creditbtn><img src="/assetts/img/image 329.png" alt="tour" /></Creditbtn>
+            <Creditbtn><img src="/assetts/img/image 327.png" alt="tour1" /></Creditbtn>
+            <Creditbtn><img src="/assetts/img/image 328.png" alt="tour2" /></Creditbtn>
+            <Creditbtn><img src="/assetts/img/image 235.png" alt="tour3" /></Creditbtn>
             </CreditBox>
-            <Creditimg src="/assetts/img/card 1.png" alt=""/>
-            <Creditimg src="/assetts/img/card 2.png" alt=""/>
+            <Creditimg src="/assetts/img/card 1.png" alt="card1"/>
+            <Creditimg src="/assetts/img/card 2.png" alt="card2"/>
             <Cardspan>{t("cardNumber")}</Cardspan>
             <CardNumber type="text" placeholder="5884 6241 4444 3333"/>
             <Cardcode>

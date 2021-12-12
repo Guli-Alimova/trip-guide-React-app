@@ -110,7 +110,7 @@ const ExploreTheWorlCard = ({exploreobj})=>{
     const {t} =useTranslation();
     return(
         <Explorecard>
-            <ExploreImg src={`/assetts/img/${exploreobj.image}`} alt=""/>
+            <ExploreImg src={`/assetts/img/${exploreobj.image}`} alt="photo"/>
             <ExplorePlace>
            <AiFillStar style={{ color: "#FFD166", fontSize: "20px" }}/>
             <ExploreReiting>{exploreobj.rating}<Explorereyt > </Explorereyt></ExploreReiting>
