@@ -51,7 +51,7 @@ const TrandingCities =()=>{
     useEffect(()=>{
         const getCities = async()=>{
             try{
-            const data = await apiCalls. getCities();
+            const data = await apiCalls.getCities();
             console.log(data);
             setTrandCity(data);
             setIsLoading(false);

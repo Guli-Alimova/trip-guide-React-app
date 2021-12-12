@@ -99,12 +99,12 @@ border-top:2px solid rgba(230, 232, 236, 1);
 `
 const ReservdataRight = styled.div`
 padding:7px 20px 11px 20px;
-background-color:${(props)=>props.theme. tabColor};
+background-color:${(props)=>props.theme.tabColor};
 border-radius:12px;
 `
 const ReservdataLeft =  styled.div`
 padding:7px 20px 11px 20px;
-background-color:${(props)=>props.theme. tabColor};
+background-color:${(props)=>props.theme.tabColor};
 border-radius:12px;
 `
 const ReservText = styled.p`
@@ -125,7 +125,7 @@ color:rgba(132, 135, 139, 1);
 `
 const ReservDatails = styled.div`
 padding:19px 25px 15px 27px;
-background-color:${(props)=>props.theme. tabColor};
+background-color:${(props)=>props.theme.tabColor};
 border-radius:10px;
 border:${(props)=>props.theme.borderCard};
 width:380px;

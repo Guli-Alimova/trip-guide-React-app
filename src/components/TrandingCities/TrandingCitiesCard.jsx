@@ -55,22 +55,12 @@ text-align: center;
 padding:26px 0;
 margin:0;
 `
-const TrandingRait = styled. div`
+const TrandingRait = styled.div`
 display: flex;
 margin-top:12px;
 vertical-align: middle;
 `
 
-const TrandingNumber = styled.span`
-font-family: DM Sans;
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: 24px;
-letter-spacing: 0em;
-text-align: center;
-color:#ccc;
-`
 const TrandingDay = styled.span`
 font-family: Poppins;
 font-size: 18px;

@@ -2,7 +2,7 @@ import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import React, { useState, useEffect } from 'react';
 import styled from "styled-components";
 import { useTranslation } from 'react-i18next';
-import { Container, Row } from "../styled/index";
+import { Container } from "../styled/index";
 import HotelSearch from '../components/HotelSearch/HotelSearch';
 import HotelPanel from '../components/HotelPanel/HotelPanel';
 import AsideFilter from '../components/AsideFilter/AsideFilter';

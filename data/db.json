@@ -36,22 +36,26 @@
         {
             "id": 1,
             "name": "Hotels",
-            "value": "Hotels"
+            "value": "Hotels",
+            "label": "Hotels"
         },
         {
             "id": 2,
             "name": "Breakfast and Dinner",
-            "value": "Breakfast and Dinner"
+            "value": "Breakfast and Dinner",
+            "label": "Breakfast and Dinner"
         },
         {
             "id": 3,
             "name": "Free Cancellation",
-            "value": "Free Cancellation"
+            "value": "Free Cancellation",
+            "label": "Free Cancellation"
         },
         {
             "id": 4,
             "name": "No prepayment",
-            "value": "No prepayment"
+            "value": "No prepayment",
+            "label": "No prepayment"
         }
     ],
 

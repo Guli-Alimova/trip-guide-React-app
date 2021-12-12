@@ -82,8 +82,8 @@ const handleValyuta = (element) =>{
         <HeaderMain>
           <Row>
             <HeaderLeft>  
-              <Link to="/"><HeaderLogoDark  src="/assetts/img/logo (4).png"   alt =""/></Link>
-              <Link to="/"><HeaderLogoWhite src="/assetts/img/logow.png" alt=""/></Link>
+              <Link to="/"><HeaderLogoDark  src="/assetts/img/logo (4).png"   alt ="logo"/></Link>
+              <Link to="/"><HeaderLogoWhite src="/assetts/img/logow.png" alt="logo"/></Link>
             </HeaderLeft>
             
             <HeaderRight>
@@ -105,7 +105,7 @@ const handleValyuta = (element) =>{
 
       
       <Button variant="primary" onClick={handleShowLang}>
-      <img src={`/assetts/img/${curlng}`} width="20px"/>
+      <img src={`/assetts/img/${curlng}`} width="20px" alt="img"/>
       </Button>
     <Modal show={showLang} onHide={handleCloseLang}>
         <Button variant="secondary" onClick={handleCloseLang}>
@@ -113,11 +113,11 @@ const handleValyuta = (element) =>{
         </Button>
       <Modal.Body  >
         <HeaderButton onClick={() => {i18next.changeLanguage('ru') && setCurlng("images.jpeg")}} >
-        <HeaderLang src="/assetts/img/images.jpeg" width="20px" alt=""/>Russan</HeaderButton>
+        <HeaderLang src="/assetts/img/images.jpeg" width="20px" alt="rus"/>Russan</HeaderButton>
        <HeaderButton onClick={() => {i18next.changeLanguage('uz') && setCurlng("uzflag.jpg")
-          }}><HeaderLang src="/assetts/img/uzflag.jpg" width="20px" alt=""/>Uzbek</HeaderButton>
+          }}><HeaderLang src="/assetts/img/uzflag.jpg" width="20px" alt="uzb"/>Uzbek</HeaderButton>
         <HeaderButton onClick={() => {i18next.changeLanguage('en') && setCurlng("flagUsa.svg")
-          }}><HeaderLang src="/assetts/img/flagUsa.svg" width="20px" alt=""/>English(uk)</HeaderButton>   
+          }}><HeaderLang src="/assetts/img/flagUsa.svg" width="20px" alt="eng"/>English(uk)</HeaderButton>   
       </Modal.Body>
     </Modal>
 
@@ -135,31 +135,31 @@ const handleValyuta = (element) =>{
       </Modal.Header>
       <Modal.Body>
        <div>
-        <p> <img src="/assetts/img/Ellipse 2098.png" style={{borderRadius:"50%"}}/>You Booked and earn 8 point for on custoner 
+        <p> <img src="/assetts/img/Ellipse 2098.png" alt="photo11" style={{borderRadius:"50%"}} />You Booked and earn 8 point for on custoner 
            creation Steve Mathew </p>
         <span>4 weeks ago</span>
         </div>
         <div>
       
-        <p> <img src="/assetts/img/Ellipse 2099.png"/>You Booked and earn 8 point for on custoner 
+        <p> <img src="/assetts/img/Ellipse 2099.png" alt="photo1"/>You Booked and earn 8 point for on custoner 
            creation Steve Mathew </p>
         <span>4 weeks ago</span>
         </div>
         <div>
     
-        <p>  <img src="/assetts/img/Ellipse 2101.png"/>You Booked and earn 8 point for on custoner 
+        <p>  <img src="/assetts/img/Ellipse 2101.png" alt="photo3"/>You Booked and earn 8 point for on custoner 
            creation Steve Mathew </p>
         <span>4 weeks ago</span>
         </div>
         <div>
         
-        <p> <img src="/assetts/img/Ellipse 2102.png"/>You Booked and earn 8 point for on custoner 
+        <p> <img src="/assetts/img/Ellipse 2102.png" alt="photo4"/>You Booked and earn 8 point for on custoner 
            creation Steve Mathew </p>
         <span>4 weeks ago</span>
         </div></Modal.Body>
       </Modal> 
 </div>
-      <Button onClick={() => setProfileShow(true)}><img className="profile-img" src="/assetts/img/Rectangle 1058.jpg"/>Delower</Button>
+      <Button onClick={() => setProfileShow(true)}><img className="profile-img" src="/assetts/img/Rectangle 1058.jpg" alt="profile"/>Delower</Button>
         <Modal
           size="s"
           show={ProfileShow}

@@ -13,14 +13,11 @@ import { Link } from "react-router-dom";
 
 
 const FooterSection = styled.section`
-background-color:${(props)=>props.theme. headerBg};
+background-color:${(props)=>props.theme.headerBg};
 padding:225px 0px 151px 0;
 position:relative;
 `
 const FooterCol = styled.div`
-`
-const FooterLogo = styled.img`
-width:148px;
 `
 const FooterCol1 = styled.div`
 `
@@ -99,8 +96,8 @@ const Footer =()=>{
             <Row>
             <Col xs={4}>
             <FooterCol>
-         <Link to="/"><HeaderLogoDark src="/assetts/img/logo (4).png" alt =""/></Link>
-         <Link to="/"><HeaderLogoWhite src="/assetts/img/logow.png" alt=""/></Link>
+         <Link to="/"><HeaderLogoDark src="/assetts/img/logo (4).png" alt ="logo"/></Link>
+         <Link to="/"><HeaderLogoWhite src="/assetts/img/logow.png" alt="logo"/></Link>
                 <FooterText>{t("footer_text")}</FooterText>
                 <FooterBtn onClick={()=>toggleTheme(theme === 'light' ? 'light' : 'light')}><BsSun style={{fontSize:"20px"}}/></FooterBtn>
                 <FooterBtn onClick={()=>toggleTheme(theme === 'light' ? 'dark' : 'light')} ><BiMoon style={{fontSize:"20px"}}/></FooterBtn>

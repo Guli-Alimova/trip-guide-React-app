@@ -6,12 +6,11 @@ import {AiOutlinePlusCircle} from 'react-icons/ai';
 import {AiOutlineMinusCircle} from 'react-icons/ai';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import {RiArrowLeftRightLine} from 'react-icons/ri';
-import Dropdown from 'react-bootstrap/Dropdown';
 import Select from 'react-select'
 import { useRef } from 'react';
 import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router";
-import {Container, Row} from "../../styled/index";
+import { Row} from "../../styled/index";
 import "./HotelSearch.css";
 
 const Hotelsection =styled.section`
@@ -27,10 +26,8 @@ padding:30px;
 box-shadow: 0px 12px 60px rgba(89, 89, 89, 0.1);
 
 `
-const HotelNav= styled.div`
- position:relative;
 
-`
+
 const TabPessengerage = styled.span`
 height: 21px;
 width: 108px;
@@ -44,9 +41,7 @@ text-align: left;
 color: rgba(177, 181, 195, 1);
 
 `
-const HotelButtonleft= styled.div`
 
-`
 const Searchbtn = styled.button`
 width: 152px;
 border-radius: 10px;

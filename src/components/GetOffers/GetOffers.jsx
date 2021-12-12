@@ -2,9 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import { useTranslation } from 'react-i18next';
 import { Container } from "../../styled";
-import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
-import FormControl from 'react-bootstrap/FormControl';
 import "../GetOffers/GetOffers.css";
 import { useRef } from 'react';
 

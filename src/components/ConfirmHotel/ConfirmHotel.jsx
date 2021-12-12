@@ -111,7 +111,7 @@ padding:7px 12px;
 display:flex;
 justify-content: space-between;
 align-items:center;
-background-color:${(props)=>props.theme. tabColor};
+background-color:${(props)=>props.theme.tabColor};
 border-radius:6px;
 border:none;
 `

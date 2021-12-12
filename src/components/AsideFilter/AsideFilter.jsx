@@ -14,6 +14,7 @@ import RangeSlider from 'react-bootstrap-range-slider';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import apiCalls from '../../config/api';
+import Loader from '../Loader/Loader';
 
 
 
@@ -52,14 +53,7 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 `
-const FilterInput = styled.input`
-width: 60px;
-padding: 3px;
-height: 32px;
-border-radius:9px;
-border:2px solid #316BFF;
-background-color:transparent;
-`
+
 const RangePrice = styled.div`
 display: flex;
 justify-content: space-between;
@@ -97,7 +91,7 @@ const AsideFilter=()=>{
       const getPopular = async()=>{
      try{
        const data = await apiCalls.getPopular();
-    
+         
          setPopular(data);
          setIsLoading(false);
      
@@ -109,7 +103,7 @@ const AsideFilter=()=>{
 getPopular();
  const   getProperty = async()=>{
   try{
-    const data = await apiCalls.  getProperty();
+    const data = await apiCalls.getProperty();
     setProperty(data);
     setIsLoading(false)
  
@@ -158,7 +152,6 @@ getFacilities();
     return(
     <FilterSection>
         <Container>
-
         <FilterSearchtitle >{t("search_property")}</FilterSearchtitle>
         <InputGroup className="mb-3" >
     <FormControl
@@ -174,6 +167,9 @@ getFacilities();
 
   <PopulatSearch>
   <FilterSearchtitle >{t("popular_filter")}</FilterSearchtitle>
+  {error ? <h3>{error}</h3>: ''}
+  {isLoading ? <Loader/> : ''} 
+  {!isLoading && !error ?
   <Form.Group className="mb-12" controlId="formBasicCheckbox">
     {popular.map(el=><div key={el.id}>
        <Form.Check 
@@ -182,12 +178,11 @@ getFacilities();
         type="checkbox" 
         label={el.label} 
         aria-label={el.name}
-        label={el.name}
         style={{color:"rgba(132, 135, 139, 1)", marginBottom:"17px"}} />
     
     </div>)}
    
-  </Form.Group>
+  </Form.Group> : ""}
   {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
     <Form.Check type="checkbox" label={t("label-hotel")} style={{color:"rgba(132, 135, 139, 1)"}} />
   </Form.Group> */}
@@ -203,9 +198,11 @@ getFacilities();
   <FilterButton>{t("see_more")}</FilterButton>
  </PopulatSearch>
 
-
  <PriceRange>
  <FilterSearchtitle >{t("price_range")}</FilterSearchtitle>
+ {error ? <h3>{error}</h3>: ''}
+  {isLoading ? <Loader/> : ''} 
+  {!isLoading && !error ?
  <FilterProgress >
  <Form>
       <Form.Group as={Row}>
@@ -225,7 +222,7 @@ getFacilities();
         </Col>
       </Form.Group>
     </Form>
-</FilterProgress>
+</FilterProgress> : ""}
 <RangePrice>
   <NumberSpan >$50</NumberSpan>
   <NumberSpan >$150</NumberSpan>
@@ -234,6 +231,9 @@ getFacilities();
 
  <PriceRange>
  <FilterSearchtitle >{t("property_type")}</FilterSearchtitle>
+ {error ? <h3>{error}</h3>: ''}
+  {isLoading ? <Loader/> : ''} 
+  {!isLoading && !error ?
  <Propert >
  <Form.Group className="mb-12" controlId="formBasicCheckbox">
     { facility.map(el=><div className='aside-main' key={el.id}>
@@ -243,15 +243,14 @@ getFacilities();
         type="checkbox" 
         label={el.label} 
         aria-label={el.name}
-        label={el.name}
         style={{color:"rgba(132, 135, 139, 1)", marginBottom:"17px"}} />    
       <NumberSpan >{el.price}</NumberSpan>
     </div> )}
-     </Form.Group>  
+     </Form.Group>
 
 
  
-  </Propert>
+  </Propert> : "" }
   {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
     <Form.Check type="checkbox" label={t("label-hotel")} style={{color:"rgba(132, 135, 139, 1)"}}/>
   </Form.Group> */}
@@ -273,22 +272,22 @@ getFacilities();
  
  <PopulatSearch>
   <FilterSearchtitle >{t("your_budget")}</FilterSearchtitle>
+  {error ? <h3>{error}</h3>: ''}
+  {isLoading ? <Loader/> : ''} 
+  {!isLoading && !error ?
   <Form.Group className="mb-12" controlId="formBasicCheckbox">
    {
    budget.map((el)=>
      <div className='filter-main' key={el.id}>
-    <Form.Check type="checkbox"
+    <Form.Check 
       onClick={handleClick}
         value={el.value}
-        type="checkbox" 
+        type="checkbox"
         label={el.label} 
         aria-label={el.name}
-        label={el.name}
      style={{color:"rgba(132, 135, 139, 1)"}}/>
- </div>
- )
- }
-  </Form.Group>
+ </div>)}
+  </Form.Group> : ""}
     
 
   {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
@@ -311,6 +310,9 @@ getFacilities();
 
  <PriceRange>
  <FilterSearchtitle className="search-title">{t("facilities")}</FilterSearchtitle>
+ {error ? <h3>{error}</h3>: ''}
+  {isLoading ? <Loader/> : ''} 
+  {!isLoading && !error ?
  <Propert >
  <Form.Group className="mb-12" controlId="formBasicCheckbox">
     {property.map(el=><div className='aside-main' key={el.id}>
@@ -320,7 +322,6 @@ getFacilities();
         type="checkbox" 
         label={el.label} 
         aria-label={el.name}
-        label={el.name}
         style={{color:"rgba(132, 135, 139, 1)", marginBottom:"17px"}} />    
       <NumberSpan >{el.price}</NumberSpan>
     </div> )}
@@ -360,15 +361,9 @@ getFacilities();
     <Form.Check type="checkbox" label={t("spa")}  style={{color:"rgba(132, 135, 139, 1)"}}/>
   </Form.Group>
   <NumberSpan >108</NumberSpan> */}
-  </Propert>
+  </Propert>: ""}
   <FilterButton>{t("see_more")}</FilterButton>
  </PriceRange>
-
-
-
-
-
-
 
 
   </Container>
