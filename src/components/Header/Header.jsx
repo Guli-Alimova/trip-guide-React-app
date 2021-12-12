@@ -117,7 +117,7 @@ const handleValyuta = (element) =>{
        <HeaderButton onClick={() => {i18next.changeLanguage('uz') && setCurlng("uzflag.jpg")
           }}><HeaderLang src="/assetts/img/uzflag.jpg" width="20px" alt="uzb"/>Uzbek</HeaderButton>
         <HeaderButton onClick={() => {i18next.changeLanguage('en') && setCurlng("flagUsa.svg")
-          }}><HeaderLang src="/assetts/img/flagUsa.svg" width="20px" alt="eng"/>English(uk)</HeaderButton>   
+          }}><HeaderLang src="/assetts/img/flagUSA.svg" width="20px" alt="eng"/>English(uk)</HeaderButton>   
       </Modal.Body>
     </Modal>
 
