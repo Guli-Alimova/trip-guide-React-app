@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from "styled-components";
 import { useTranslation } from 'react-i18next';
 import { Container } from "../../styled";
 import ExploreTheWorldCard from './ExploreTheWorldCard';
 import 'swiper/swiper-bundle.min.css';
 import 'swiper/swiper.min.css';
-import SwiperCore , { Autoplay } from 'swiper';
+import "../ExploreTheWorld/ExploreTheWorld.css";
+import apiCalls from '../../config/api';
+import Loader from '../Loader/Loader';
+import { useEffect } from 'react';
+import SwiperCore ,  { Navigation } from 'swiper';
 import {Swiper, SwiperSlide} from 'swiper/react';
+import {AiOutlineLeft}  from "react-icons/ai";
+import {AiOutlineRight} from "react-icons/ai";
 
 
 const ExploreSection=styled.div`
@@ -38,28 +44,64 @@ padding-bottom:49px;
 
 `
 
-SwiperCore.use([Autoplay]);
+SwiperCore.use([Navigation]); 
 
 
 const ExploreTheWorld = ()=>{
+    const [exploreCity, setExploreCity] = useState([]);
+    const [isLoading, setIsLoading] = useState (true);
+   const [error, setError] = useState();
     const {t} = useTranslation();
+
+    useEffect(() => {
+        const getExplore = async()=>{
+            try{
+                const data = await apiCalls.getExplore();
+                setTimeout(()=>{
+                console.log(data);
+                setExploreCity(data);
+                setIsLoading(false);
+                }, 3000);
+                
+            }catch (error){
+                setError(error.message);
+                setIsLoading(false);
+            }
+        }
+      getExplore();
+    }, [])
     return(
         <ExploreSection>
             <Container>
+            <div className='explore-main'>
+            <div className='explore-menu'>
             <ExploreTitle>{t('explore_title')}</ExploreTitle>
             <ExploreText>10,788 {t('explore_text')}</ExploreText>
+              </div>
+                <div className='explore-icon'>
+                <AiOutlineLeft className='button-prev' style={{color:"rgba(132, 135, 139, 1)", width:"36px", height:"36px"}}/>
+                <AiOutlineRight className='button-next' style={{color:"rgba(132, 135, 139, 1)", width:"36px", height:"36px"}} />
+                </div>
+                 
+            </div>  
+            
+            {error ? <h3>{error}</h3>: ''}
+            {isLoading ? <Loader/> : ''} 
+            {!isLoading && !error ?
+     
             <Swiper
-             modules={[Autoplay]} 
+            modules={[Navigation]}
              grabCursor={true}
              spaceBetween={10}
              slidesPerView={4}
-             loop autoplay={{delay:3000, disableOnInteraction:false}}
+             navigation={{
+                nextEl:'.button-next',
+                prevEl:'.button-prev',
+            }}
         >
-           <SwiperSlide><ExploreTheWorldCard/></SwiperSlide>
-           <SwiperSlide><ExploreTheWorldCard/></SwiperSlide>
-           <SwiperSlide><ExploreTheWorldCard/></SwiperSlide>
-           <SwiperSlide><ExploreTheWorldCard/></SwiperSlide>
-</Swiper>
+           {exploreCity.map(el=>(<SwiperSlide key={el.id}><ExploreTheWorldCard exploreobj={el}/></SwiperSlide>))}
+          
+</Swiper> : ''}
 
             
             </Container>

@@ -1,3 +1,9 @@
 .react-tabs{
     padding:30px 0 40px 0;
 }
+.react-tabs__tab--selected {
+background-color: transparent;
+border:none;
+border-bottom:2px solid rgba(20, 92, 230, 1);
+color:rgba(20, 92, 230, 1);
+}

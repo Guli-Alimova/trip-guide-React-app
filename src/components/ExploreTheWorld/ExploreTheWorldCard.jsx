@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from "styled-components";
-
 import {GrLocation} from 'react-icons/gr';
 import {RiHotelLine} from 'react-icons/ri';
 import "../ExploreTheWorld/ExploreTheWorld.css";
 import { AiFillStar } from "react-icons/ai"
+import { useTranslation } from 'react-i18next';
 
 const Explorecard = styled.div`
 border: 1px solid colTitle;
@@ -106,21 +106,22 @@ border-radius:6px;
 display: block;
 padding:5px 10px;
 `
-const ExploreTheWorlCard = ()=>{
+const ExploreTheWorlCard = ({exploreobj})=>{
+    const {t} =useTranslation();
     return(
         <Explorecard>
-            <ExploreImg src="/assetts/img/image (9).png" alt=""/>
+            <ExploreImg src={`/assetts/img/${exploreobj.image}`} alt=""/>
             <ExplorePlace>
            <AiFillStar style={{ color: "#FFD166", fontSize: "20px" }}/>
-            <ExploreReiting>4.91<Explorereyt >  (147)</Explorereyt></ExploreReiting>
+            <ExploreReiting>{exploreobj.rating}<Explorereyt > </Explorereyt></ExploreReiting>
             </ExplorePlace>
             <ExploreSpace>
-                <Exploretheme>Comfort Space</Exploretheme>
-                <ExplorePrice >$210</ExplorePrice>
+                <Exploretheme>{exploreobj.title}</Exploretheme>
+                <ExplorePrice >{exploreobj.price}</ExplorePrice>
             </ExploreSpace>
-            <ExploreAddres >1.2 km to Town Center</ExploreAddres>
-            <div><GrLocation style={{ color: "rgba(132, 135, 139, 1)", fontSize: "14px"}}/>< ExploreCity>Turkey, Mamaris</ ExploreCity></div>
-           <div> <RiHotelLine style={{ color: "rgba(132, 135, 139, 1)", fontSize: "14px"}}/>< ExploreCity>Rooms available: 375</ ExploreCity></div>
+            <ExploreAddres >{exploreobj.radius} to Town Center</ExploreAddres>
+            <div><GrLocation style={{ color: "rgba(132, 135, 139, 1)", fontSize: "14px"}}/>< ExploreCity>{exploreobj.location}</ ExploreCity></div>
+           <div> <RiHotelLine style={{ color: "rgba(132, 135, 139, 1)", fontSize: "14px"}}/>< ExploreCity>{t("avaible")} {exploreobj.rooms}</ ExploreCity></div>
         </Explorecard> 
 
 

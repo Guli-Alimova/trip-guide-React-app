@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import styled from "styled-components";
 
 
@@ -28,9 +29,6 @@ font-size: 20px;
 font-style: normal;
 font-weight: 700;
 line-height: 26px;
-letter-spacing: 0em;
-text-align: left;
-width:145px;
 padding-bottom:12px;
 color: ${(props)=>(props.theme.cardtitle)};
 
@@ -49,12 +47,50 @@ color: ${(props)=>(props.theme.title)};
 
 `
 const BestPlacesCard =()=>{
+    const {t}=useTranslation();
     return(
+        <>
         < BestPlace >
         <BestImg src="/assetts/img/image.png" alt=""/>
         <BestTitle>Batu, East Java</BestTitle>
-        <BestText>86 Destinations</BestText>
+        <BestText>86 {t("destination")}</BestText>
         </BestPlace>
+         < BestPlace >
+         <BestImg src="/assetts/img/rasm.png" alt=""/>
+         <BestTitle>Kuta</BestTitle>
+         <BestText>86 {t("destination")}</BestText>
+         </BestPlace>
+          < BestPlace >
+          <BestImg src="/assetts/img/rasm1.png" alt=""/>
+          <BestTitle>Surabaya, East Java</BestTitle>
+          <BestText>86 {t("destination")}</BestText>
+          </BestPlace>
+           < BestPlace >
+           <BestImg src="/assetts/img/rasm2.png" alt=""/>
+           <BestTitle>Surabaya, East Java</BestTitle>
+           <BestText>86  {t("destination")}</BestText>
+           </BestPlace>
+           < BestPlace >
+        <BestImg src="/assetts/img/rasm2.png" alt=""/>
+        <BestTitle>Malang, East Java</BestTitle>
+        <BestText>86  {t("destination")}</BestText>
+        </BestPlace>
+         < BestPlace >
+         <BestImg src="/assetts/img/rasm1.png" alt=""/>
+         <BestTitle>Surabaya, East Java</BestTitle>
+         <BestText>86 {t("destination")}</BestText>
+         </BestPlace>
+          < BestPlace >
+          <BestImg src="/assetts/img/rasm.png" alt=""/>
+          <BestTitle>Kuta</BestTitle>
+          <BestText>86 {t("destination")}</BestText>
+          </BestPlace>
+           < BestPlace >
+           <BestImg src="/assetts/img/image.png" alt=""/>
+           <BestTitle>Batu, East Java</BestTitle>
+           <BestText>86 {t("destination")}</BestText>
+           </BestPlace>
+           </>
 
     )
 }

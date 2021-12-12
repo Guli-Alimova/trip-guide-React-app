@@ -8,5 +8,8 @@ body {
 *{
   box-sizing: border-box;
 }
+.breadcrumb-item+.breadcrumb-item::before {
+display:none;
 
+}
 

@@ -2,3 +2,16 @@
 .progress{
     width: 199px;;
 }
+.aside-main{
+    display: flex;
+    justify-content: space-between;
+   
+}
+.mb-12{
+    width: 100%;
+}
+.filter-main{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom:17px;
+}

@@ -53,13 +53,7 @@ const BestPlaces = ()=>{
         <SearchText>{t('search_text')}</SearchText>
         <BestCardbox> 
         <BestPlacesCard/>
-        <BestPlacesCard/>
-        <BestPlacesCard/>
-        <BestPlacesCard/>
-        <BestPlacesCard/>
-        <BestPlacesCard/>
-        <BestPlacesCard/>
-        <BestPlacesCard/>
+      
         </BestCardbox>
         </Container> 
         </BestSection>

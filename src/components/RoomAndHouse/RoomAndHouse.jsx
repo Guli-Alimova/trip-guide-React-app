@@ -7,11 +7,11 @@ const BigSection = styled.div`
 display:flex;
 
 `
-const RoomAndHouse = ()=>{
+const RoomAndHouse = ({prop})=>{
     return(
         <BigSection>
         <RoominHouse/>
-          <PriceList/>   
+          <PriceList prop={prop}/>   
         </BigSection>
        
 

@@ -53,3 +53,9 @@ color: rgba(132, 135, 139, 1)!important;
     border:none !important;
     background-color: transparent !important;
 }
+.passanger-tab{
+    display:none;
+}
+.passanger-tab.open{
+    display: block;
+}

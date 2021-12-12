@@ -12,6 +12,7 @@ import { useRef } from 'react';
 import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router";
 import {Container, Row} from "../../styled/index";
+import "./HotelSearch.css";
 
 const Hotelsection =styled.section`
 background-color:${(props)=>props.theme.backgroundmain};
@@ -21,7 +22,7 @@ const HotelTab= styled.div`
 border:none;
 border-radius:20px;
 bottom:100px;
-background-color:#fff;
+background-color:${(props)=>props.theme.headerBg};
 padding:30px;
 box-shadow: 0px 12px 60px rgba(89, 89, 89, 0.1);
 
@@ -139,7 +140,7 @@ const Tabbtn = styled.button`
 height: 35px;
 width: 42px;
 border:none;
-background-color: #fff;
+background-color: transparent;
 margin: 0 20px; 
 color:${(props)=>props.theme.btnPlus}
 
@@ -161,27 +162,32 @@ width:148px;
 
 `
 const TabNav= styled.div`
- border-bottom:2px solid  rgba(231, 236, 243, 1);
- width:80%;
+border-bottom:2px solid  rgba(231, 236, 243, 1);
+width:80%;
 `
 const DropdownPassanger = styled.div`
-
+position:relative;
 `
 const PassangerCount = styled.div`
+color:${(props)=>props.theme.tabtitle};
+cursor:pointer;
 `
 const PassengerSpan = styled.span`
 
 `
 const BigPassanger = styled.div`
-display:flex;
-justify-content: space-between;
-flex-wrap:wrap;
+display:none;
 width:354px;
 border: ${(props)=>props.theme.borderInput} ;
 padding:12px;
-border-radius:16px;s
-background: ${(props)=>props.theme.tabColor};
-color:color:${(props)=>props.theme.tabtitle}
+border-radius:16px;
+background-color: ${(props)=>props.theme.tabColor};
+color:${(props)=>props.theme.tabtitle};
+position:absolute;
+top:-254px;
+
+
+
 
 `
 const TabSpan = styled.span`
@@ -190,19 +196,39 @@ color: ${(props)=>props.theme.btnPlus};
 `
 const HotelSearch =()=>{
 
-  
-
-  // const cityRef = useRef(null);
+  const checkinRef = useRef();
+  const checkoutRef = useRef();
+  const cityRef = useRef();
   const [adult, setAdult]=useState(1);
-  const [children , setChildren] = useState();
-  const [baby, setBaby] = useState();
+  const [children , setChildren] = useState(0);
+  const [baby, setBaby] = useState(0);
 
   const count = adult + children + baby;
 
-  
- 
+  const [passangerOpen, setPassangerOpen ] = useState(false);
 
-  const location = [
+  const passangerDropdown = ()=>setPassangerOpen (!passangerOpen) ;
+  const navigate = useNavigate();
+
+useEffect (()=>{
+  cityRef.current.value = "Where are you"
+  console.log(cityRef);
+  checkinRef.current.value = "Add date"
+  console.log(checkinRef);
+  checkoutRef.current.value = "Add-date"
+  console.log(checkoutRef);
+},[cityRef, checkinRef, checkoutRef]);
+
+
+   function handleFormSubmit(e) {
+  e.preventDefault();
+  console.log(cityRef.current.props.value)
+  console.log(checkinRef.current.state.value);
+  console.log(checkoutRef.current.state.value);
+  navigate('/hotellist')
+}
+
+const location = [
     {value:"1", label:"United State Of Emirates", name:"Dubay", location:""}, 
     {value:"2", label:"Daha", name:"Qatar", location:""}, 
     {value:"3", label:"Sydney, New South Wales, Australia", name:"Darling Harbour", location:""},
@@ -211,26 +237,20 @@ const HotelSearch =()=>{
 
   
   ]
-   const navigate = useNavigate();
- 
-   function handleFormSubmit(e) {
-  e.preventDefault();
- 
-  navigate('/hoteldatails')
-}
+
     const {t} = useTranslation();
   return(     
     
 
     <Hotelsection>
-     <Container> 
+
       <HotelTab>
         <TabNav>
           <Row>
-      <DropdownPassanger>
-            <PassangerCount><PassengerSpan>{count} </PassengerSpan>{t("tab_pass")}</PassangerCount>
-          <BigPassanger>
-         
+          <DropdownPassanger >
+            <PassangerCount onClick={passangerDropdown}><PassengerSpan>{count} </PassengerSpan>{t("tab_pass")}</PassangerCount>
+          
+          <BigPassanger className={`passanger-tab ${passangerOpen && "open"}` }>
           <TabbuttonRight>
           <TabPessengerage> {t('tab_person') } </TabPessengerage>
           <TabSpan>{t('person_number')} </TabSpan>
@@ -274,9 +294,10 @@ const HotelSearch =()=>{
           </Tabbtn>
           </Tabbuttinleft>
         </BigPassanger>
-        </DropdownPassanger>
+      </DropdownPassanger>
 
        </Row> 
+       
             </TabNav>  
             <form onSubmit={handleFormSubmit}>
             <TabInput>
@@ -284,8 +305,9 @@ const HotelSearch =()=>{
               <TabLocation>
                 < InputTitle>{t("tab_location")}</ InputTitle>
            <Select options={location} 
-         
+           ref={cityRef}
            placeholder={`${t('tab_from')}`}
+        
      
            />
 
@@ -294,26 +316,22 @@ const HotelSearch =()=>{
               <TabCheckIn>
                 <ChekIn>{t("check_in")}</ChekIn>
                 <DayPickerInput 
-               dayPickerProps={{
-              month: new Date(2018, 10),
-              showWeekNumbers: true,
-              todayButton: 'Today',
-              }}
+                ref={checkinRef}
+                placeholder={t("add date")}
+    
               />
               </TabCheckIn>
               <RightLeft ><RiArrowLeftRightLine/></RightLeft>
               <TabCheckIn>
                 <ChekIn>{t("check_out")}</ChekIn>
                 <DayPickerInput 
-               dayPickerProps={{
-              month: new Date(2018, 10),
-              showWeekNumbers: true,
-              todayButton: 'Today',
-              }}
+                ref={checkoutRef}
+                placeholder={t("add date")}
+      
               />
               </TabCheckIn>
           
-              <Searchbtn type="submit" className="tab-search">Search</Searchbtn> 
+              <Searchbtn type="submit" className="tab-search">{t("search")}</Searchbtn> 
            
             
 
@@ -328,7 +346,7 @@ const HotelSearch =()=>{
 
 
      </HotelTab>
-      </Container>
+
       </Hotelsection>
 
     )

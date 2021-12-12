@@ -1,14 +1,14 @@
 .modal-content{
     left:579px;
     top:34px;
-    width: 50%;
+    width: 50% !important;
   }
   .btn {
     margin-right:17px;
     
   }
   .btn-primary{
-    background-color: #fff !important;
+    background-color: transparent !important;
     border:none !important;
     color:#ccc !important;
   }
@@ -25,7 +25,6 @@
     background-color: #fff;
     border:none;
   
-   
 
   }
 

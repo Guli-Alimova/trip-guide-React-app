@@ -75,6 +75,16 @@ color:${(props)=>(props.theme.footerText)};
 padding-top:16px ;
 
 `
+const HeaderLogoDark = styled.img`
+width:148px;
+display:${(props)=>props.theme.HeaderLogoDark};
+
+`
+const HeaderLogoWhite = styled.img`
+width:148px;
+display:${(props)=>props.theme.HeaderLogoLight};
+
+`
 const Footer =()=>{
     const {theme, toggleTheme} = useContext(ThemeContext);
     const {t} = useTranslation();
@@ -89,7 +99,8 @@ const Footer =()=>{
             <Row>
             <Col xs={4}>
             <FooterCol>
-         <FooterLogo src="/assetts/img/logo (4).png" alt =""/>
+         <Link to="/"><HeaderLogoDark src="/assetts/img/logo (4).png" alt =""/></Link>
+         <Link to="/"><HeaderLogoWhite src="/assetts/img/logow.png" alt=""/></Link>
                 <FooterText>{t("footer_text")}</FooterText>
                 <FooterBtn onClick={()=>toggleTheme(theme === 'light' ? 'light' : 'light')}><BsSun style={{fontSize:"20px"}}/></FooterBtn>
                 <FooterBtn onClick={()=>toggleTheme(theme === 'light' ? 'dark' : 'light')} ><BiMoon style={{fontSize:"20px"}}/></FooterBtn>
@@ -100,9 +111,9 @@ const Footer =()=>{
             <FooterCol1>
                 < ColTitle>{t("col_title1")}</ColTitle>
                 <FooterLink >
-                 <FooterMenu >{t("col_ul")}</FooterMenu>
-               <FooterMenu> {t("col_ul1")}</FooterMenu>
-              <FooterMenu >{t("col_ul2")}</FooterMenu>
+                <FooterMenu >{t("col_ul")}</FooterMenu>
+                <FooterMenu> {t("col_ul1")}</FooterMenu>
+                <FooterMenu >{t("col_ul2")}</FooterMenu>
                <FooterMenu> {t("col_ul3")}</FooterMenu>
                <FooterMenu>{t("col_ul4")}</FooterMenu>
                 </FooterLink>

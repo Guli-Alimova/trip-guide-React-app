@@ -7,11 +7,13 @@ import "../TopTour/TopTour.css";
 import TopTourCard from '../TopTour/TopTourCard';
 import 'swiper/swiper-bundle.min.css';
 import 'swiper/swiper.min.css';
-import SwiperCore , { Autoplay } from 'swiper';
+import SwiperCore ,  { Navigation } from 'swiper';
 import {Swiper, SwiperSlide} from 'swiper/react';
-import { Navigation, Pagination } from 'swiper';
-
-
+import {useState, useEffect} from 'react';
+import apiCalls from '../../config/api';
+import Loader from '../Loader/Loader';
+import {AiOutlineLeft}  from "react-icons/ai";
+import {AiOutlineRight} from "react-icons/ai";
 
 
 const TopTourSection = styled.section`
@@ -39,38 +41,72 @@ line-height: 24px;
 letter-spacing: 0em;
 text-align: left;
 color:${(props)=>(props.theme.ptext)};
+padding-bottom:61px;
 
 `
-SwiperCore.use([Autoplay]);
-SwiperCore.use([Pagination]); 
+
+SwiperCore.use([Navigation]); 
 
 
 const TopTour =() =>{
+   const [topCity, setTopCity] = useState([])
+   const [isLoading, setIsLoading] = useState (true);
+   const [error, setError] = useState();
    
-    const {t} = useTranslation();
+   const {t} = useTranslation();
+
+   useEffect(()=>{
+       const getTours = async()=>{
+           try{
+               const data = await apiCalls.getTours();
+               setTimeout(()=>{
+               console.log(data);
+               setTopCity(data);
+               setIsLoading(false);
+               }, 3000);
+   
+           }catch (error){
+               setError(error.message);
+               setIsLoading(false);
+           }
+           }
+        getTours()
+       },[])
     
     return(
        
         <TopTourSection> 
             <Container>
-             <TopTourTitle>{t("top_title")}</TopTourTitle>
-             <TopText>{t("top_text")}</TopText>
-         
+              <div className='top-main'>
+                  <div className='top-menu'>
+                    <TopTourTitle>{t("top_title")}</TopTourTitle>
+                    <TopText>{t("top_text")}</TopText>   
+                  </div>
+                  <div className='top-icon'>
+                  <AiOutlineLeft className='my-swiper-button-prev' style={{color:"rgba(132, 135, 139, 1)", width:"36px", height:"36px"}}/>
+                  <AiOutlineRight className='my-swiper-button-next' style={{color:"rgba(132, 135, 139, 1)", width:"36px", height:"36px"}} />
+                  </div>
+                 
+                </div>  
+            
+             
+             {error ? <h3>{error}</h3>: ''}
+            {isLoading ? <Loader/> : ''} 
+            {!isLoading && !error ?
              <Swiper
              
-             modules={[Navigation, Pagination, {Autoplay}]}
+             modules={[Navigation]}
              grabCursor={true}
              spaceBetween={30}
              slidesPerView={3}
-            //  pagination={{ clickable: true }}
-
-             loop autoplay={{delay:3000, disableOnInteraction:false}}
+             navigation={{
+                 nextEl:'.my-swiper-button-next',
+                 prevEl:'.my-swiper-button-prev',
+             }}
         >
-           <SwiperSlide><TopTourCard/></SwiperSlide>
-           <SwiperSlide><TopTourCard/></SwiperSlide>
-           <SwiperSlide><TopTourCard/></SwiperSlide>
-    
-</Swiper>
+            {topCity.map(el =>(<SwiperSlide key={el.id}><TopTourCard cityobj={el}/></SwiperSlide>))}
+
+</Swiper> : ''}
 
 
             </Container>

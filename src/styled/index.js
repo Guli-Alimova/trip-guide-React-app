@@ -52,7 +52,11 @@ export const DarkTheme ={
     colororange:"rgba(244, 245, 246, 1)",
     featuresbtn:"rgba(177, 181, 195, 1)", 
     price:"rgba(231, 236, 243, 1)",
-    pricebg:"rgba(34, 37, 41, 1)"
+    pricebg:"rgba(34, 37, 41, 1)",
+    guest:"rgba(177, 181, 195, 1)",
+    HeaderLogoDark:"none",
+    HeaderLogoLight:"block",
+    mathod:"rgba(231, 236, 243, 1)",
 }
 export const LightTheme = {
     backgroundColor:'#FBFBFB',
@@ -95,7 +99,11 @@ export const LightTheme = {
     colororange:"#DC6E3D",
     featuresbtn:"rgba(79, 79, 79, 1)",
     price:"rgba(177, 181, 195, 1)",
-    pricebg:"rgba(255, 255, 255, 1)"
+    pricebg:"rgba(255, 255, 255, 1)",
+    guest:"rgba(132, 135, 139, 1)",
+    HeaderLogoDark:"block",
+    HeaderLogoLight:"none",
+    mathod:"rgba(119, 126, 144, 1)",
 
     
 };

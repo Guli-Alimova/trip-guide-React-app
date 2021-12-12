@@ -4,3 +4,9 @@
 .dropdown .btn-group{
     right:0;
 }
+.passanger-tab{
+    display:none;
+}
+.passanger-tab.open{
+    display: block;
+}

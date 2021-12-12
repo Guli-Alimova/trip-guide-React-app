@@ -35,8 +35,8 @@ margin:0;
 `
 const PassionReview = styled.div`
 position:absolute;
-left: 11.56%;
-top: 76.86%;
+left: 8.56%;
+top: 69.86%;
 `
 const Passionraiting = styled.span`
 font-family: DM Sans;

@@ -1,0 +1,12 @@
+.reservdiv{
+    display:flex;
+    justify-content: space-between;
+}
+.gobtn{
+    padding:14px 37px;
+    border-radius:34px;
+    border:none;
+    background-color: rgba(59, 113, 254, 1);
+    color:#fff;
+    margin-top:30px;
+}

@@ -7,3 +7,6 @@
     margin-left:0;
     margin-top:11px;
 }
+.breadcrumb-item+.breadcrumb-item::before{
+display:none;
+}

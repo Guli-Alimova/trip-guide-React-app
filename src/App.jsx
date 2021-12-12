@@ -10,6 +10,8 @@ import { DarkTheme, LightTheme } from "./styled";
 import HotelDatails from "./pages/HotelDatails";
 import ConfirmBook from "./pages/ConfirmBook";
 import NotFound from "./pages/NotFound";
+import Congratulations from "./pages/Congrilution";
+import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
 
@@ -21,23 +23,17 @@ const App = () => {
     <div className="App">
       <BrowserRouter>
       <Suspense fallback="loading">
-      
+       <ScrollToTop/>
         <Header/>
         <Routes>
           <Route exact path='/' element={<Home/>}/>
+         <Route path='/hotellist' element={<HotelList/>}/>
+         <Route path='/hoteldatails/:id' element={<HotelDatails/>}/>
+         <Route path='/hotelconfirm/:id' element={<ConfirmBook/>}/>
+         <Route path='/hotelcong/:id' element={<Congratulations/>}/>
+         <Route  exact path="*" element={<NotFound/>}/>
         </Routes> 
-        <Routes>
-          <Route path='/hotellist' element={<HotelList/>}/>
-        </Routes> 
-        <Routes>
-          <Route path='/hoteldatails' element={<HotelDatails/>}/>
-        </Routes> 
-        <Routes>
-          <Route path='/hotelconfirm' element={<ConfirmBook/>}/>
-        </Routes> 
-        <Routes>
-          <Route path="*" element={<NotFound/>}/>
-        </Routes> 
+       
         <Footer/> 
 </Suspense>
       </BrowserRouter>

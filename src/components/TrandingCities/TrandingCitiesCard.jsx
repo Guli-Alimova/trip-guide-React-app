@@ -36,7 +36,7 @@ margin-left:8px;
 
 `
 const TrandingTitle = styled.h4`
-color:${(props)=>(props.theme.cardtitle)};
+color:${(props)=>props.theme.cardtitle};
 font-family: DM Sans;
 font-size: 24px;
 font-style: normal;
@@ -45,7 +45,7 @@ line-height: 36px;
 
 `
 const TrandingPrice = styled.p`
-color:${(props)=>(props.theme.title)}
+color:${(props)=>props.theme.title};
 font-family: Poppins;
 font-style: normal;
 font-weight: 600;
@@ -82,8 +82,7 @@ text-align: center;
 color:#ccc;
 `
 const TrandinfBtn = styled.button`
-height: 33px;
-width: 99px;
+padding:7px 16px;
 border-radius: 6px;
 background-color: rgba(49, 107, 255, 1);
 border:none;
@@ -97,20 +96,20 @@ text-align: center;
 color:rgba(255, 255, 255, 1);
 
 `
-const TrendingCitiesCard =()=>{
+const TrendingCitiesCard =({trandObj})=>{
     const {t} = useTranslation();
     return(
         <TrandingCard>
             <TrandingLeft>
-               <img src = "/assetts/img/33.png" alt=""/> 
+               <img src = {`/assetts/img/${trandObj.photo}`} alt=""/> 
             </TrandingLeft> 
             <TrandingRight>
-                <TrandingTitle>Manila</TrandingTitle>
+                <TrandingTitle>{trandObj.name}</TrandingTitle>
                 <TrandingRait >
               <AiFillStar style={{ color: "#FFD166", fontSize: "22px" }} />
-            <TrandingRaiting>4.91<TrandingNumber>  (147)</TrandingNumber></TrandingRaiting>
+            <TrandingRaiting>{trandObj.rating}</TrandingRaiting>
             </TrandingRait>
-            <TrandingPrice>$250.00<TrandingDay>/night</TrandingDay></TrandingPrice>
+            <TrandingPrice>{trandObj.price}<TrandingDay>/{t("kecha")}</TrandingDay></TrandingPrice>
             <TrandinfBtn>{t('book_now')}</TrandinfBtn>
             </TrandingRight>
 

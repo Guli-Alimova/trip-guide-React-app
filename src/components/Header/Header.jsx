@@ -9,7 +9,8 @@ import{Row} from '../../styled'
 import {CgProfile} from 'react-icons/cg';
 import {FaSignOutAlt} from 'react-icons/fa';
 import "../Header/Header.css";
-import {VscChromeClose} from "react-icons/vsc"
+import {VscChromeClose} from "react-icons/vsc";
+import { Link } from 'react-router-dom';
 
 
 
@@ -38,6 +39,16 @@ margin-top:24px;
 display:block;
 width: 200px;
 `
+const HeaderLogoDark = styled.img`
+width:148px;
+display:${(props)=>props.theme.HeaderLogoDark};
+
+`
+const HeaderLogoWhite = styled.img`
+width:148px;
+display:${(props)=>props.theme.HeaderLogoLight};
+
+`
 
 const Header = ()=>{
 
@@ -59,7 +70,7 @@ const handleValyuta = (element) =>{
   }
  //Language
 
-  const [curlng, setCurlng] =useState("flagUsa.svg");
+  const [curlng, setCurlng] =useState("flagUSA.svg");
 
  
   //profile
@@ -71,7 +82,8 @@ const handleValyuta = (element) =>{
         <HeaderMain>
           <Row>
             <HeaderLeft>  
-              <img src="/assetts/img/logo.jpg" width="148px"  alt =""/>
+              <Link to="/"><HeaderLogoDark  src="/assetts/img/logo (4).png"   alt =""/></Link>
+              <Link to="/"><HeaderLogoWhite src="/assetts/img/logow.png" alt=""/></Link>
             </HeaderLeft>
             
             <HeaderRight>
@@ -79,6 +91,7 @@ const handleValyuta = (element) =>{
               {currency}
               </Button>
 
+ 
       <Modal show={show} onHide={handleClose}>
        <Button variant="secondary" onClick={handleClose}>
          X
@@ -88,6 +101,7 @@ const handleValyuta = (element) =>{
       <HeaderButton onClick={handleValyuta } >GBP </HeaderButton>
       <HeaderButton onClick={handleValyuta }   >CAD </HeaderButton></Modal.Body>
       </Modal>
+    
 
       
       <Button variant="primary" onClick={handleShowLang}>
@@ -110,8 +124,9 @@ const handleValyuta = (element) =>{
 
  
     <Button onClick={() => setBell(true)}><VscBellDot/></Button>
+    <div className='modal'>
       <Modal
-        size="sm"
+        size="l"
         show={bell}
         onHide={() => setBell(false)}
         aria-labelledby="example-modal-sizes-title-sm"
@@ -120,7 +135,7 @@ const handleValyuta = (element) =>{
       </Modal.Header>
       <Modal.Body>
        <div>
-        <p> <img src="/assetts/img/Ellipse 2098.png"/>You Booked and earn 8 point for on custoner 
+        <p> <img src="/assetts/img/Ellipse 2098.png" style={{borderRadius:"50%"}}/>You Booked and earn 8 point for on custoner 
            creation Steve Mathew </p>
         <span>4 weeks ago</span>
         </div>
@@ -143,10 +158,10 @@ const handleValyuta = (element) =>{
         <span>4 weeks ago</span>
         </div></Modal.Body>
       </Modal> 
-
+</div>
       <Button onClick={() => setProfileShow(true)}><img className="profile-img" src="/assetts/img/Rectangle 1058.jpg"/>Delower</Button>
         <Modal
-          size="sm"
+          size="s"
           show={ProfileShow}
           onHide={() => setProfileShow(false)}
           aria-labelledby="example-modal-sizes-title-sm"

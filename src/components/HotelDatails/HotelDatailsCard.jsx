@@ -7,6 +7,8 @@ import ReactStars from "react-rating-stars-component";
 import { useTranslation } from 'react-i18next';
 
 
+
+
 const HotelMainDatails = styled.div`
 `
 const Datailstitle = styled.h1`
@@ -68,7 +70,7 @@ display:flex;
 align-items:center;
 `
 const HotelbtnGreen = styled.button`
-padding:5px 16px
+padding:5px 16px;
 border-radius:5px;
 margin-right:17px;
 font-family: DM Sans;
@@ -82,7 +84,7 @@ background-color:${(props)=>(props.theme.bggreen)};
 color:${(props)=>(props.theme.colorgreen)};
 `
 const HotelbtnYellow = styled.button`
-padding:5px 16px
+padding:5px 16px;
 border-radius:5px;
 margin-right:17px;
 font-family: DM Sans;
@@ -96,7 +98,7 @@ color:${(props)=>(props.theme.coloryellow)}
 
 `
 const HotelbtnBlue = styled.button`
-padding:5px 16px
+padding:5px 16px;
 border-radius:5px;
 margin-right:17px;
 font-family: DM Sans;
@@ -111,7 +113,7 @@ color:${(props)=>(props.theme.colorblue)}
 
 `
 const HotelbtnPink = styled.button`
-padding:5px 16px
+padding:5px 16px;
 border-radius:5px;
 margin-right:17px;
 font-family: DM Sans;
@@ -126,9 +128,8 @@ color:${(props)=>(props.theme.colorpink)};
 
 `
 const HotelbtnOrange = styled.button`
-padding:5px 16px
+padding:5px 16px;
 border-radius:5px;
-border:none;
 font-family: DM Sans;
 font-size: 14px;
 font-style: normal;
@@ -140,28 +141,35 @@ color:${(props)=>(props.theme.colororange)};
 margin-right:17px;
 
 `
-const HotelDatailsCard =()=>{
-  const {t} = useTranslation()
+const HotelDatailsCard =({prop})=>{
+  const {t} = useTranslation();
+  
+
+
     const ratingChanged = (newRating) => {
         console.log(newRating);
       };
+     
        
     return(
 
         <Container>
-        <HotelMainDatails>
-          <Datailstitle>{t("datailtitle")}</Datailstitle>
-    
+       
+         <HotelMainDatails>
+          <Datailstitle>{prop.name}</Datailstitle>
         <HotelRaiting>
             <AiFillStar style={{ color: "#FFD166", fontSize: "22px" }} />
-            <TrandingRaiting>4.91< HotelRewievNumber >  (122 reviews)</ HotelRewievNumber ></TrandingRaiting>
-            <HotelsCity><CgFlagAlt style={{ color: "rgba(132, 135, 139, 1)", fontSize: "13px" }}/>Zuich town, Switzerland</HotelsCity>
+            <TrandingRaiting>{prop.rating}< HotelRewievNumber >  ({prop.reviews} {t("reviews")})</ HotelRewievNumber ></TrandingRaiting>
+            <HotelsCity><CgFlagAlt style={{ color: "rgba(132, 135, 139, 1)", fontSize: "13px" }}/>{prop.name}</HotelsCity>
             </HotelRaiting>
             <HotelImage>
-                <HotelPhoto src="/assetts/img/img1.png" alt=""/> 
+                <HotelPhoto src={`/assetts/img/${prop.photo}`} alt=""/> 
                
             </HotelImage>  
-        </HotelMainDatails>    
+        </HotelMainDatails>
+        
+        
+           
             
            <HotelButtondatails>
                <HotelbtnGreen>5.0</HotelbtnGreen>  

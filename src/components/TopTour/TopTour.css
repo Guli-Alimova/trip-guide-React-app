@@ -40,3 +40,20 @@ top: 91.1%;
 color:rgba(252, 252, 253, 1);
 
 }
+.top-main{
+    display: flex;
+    justify-content: space-between;
+}
+.my-swiper-button-prev{
+    padding:3px;
+    border-radius:50%;
+    background-color: rgba(230, 232, 236, 1);
+    cursor: pointer;
+}
+.my-swiper-button-next{
+    padding:3px;
+    border-radius:50%;
+    background-color: rgba(230, 232, 236, 1);
+    margin-left:10px;
+    cursor: pointer;
+}

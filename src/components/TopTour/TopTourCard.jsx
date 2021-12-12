@@ -1,4 +1,6 @@
+
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import styled from "styled-components";
 
 
@@ -12,18 +14,19 @@ background: linear-gradient(175.54deg, rgba(2, 0, 14, 0.13) 9.38%, rgba(42, 34, 
    position:absolute;
    top:0px;
    left:0px;
-   width:95%;
+   width:100%;
    height:100%;
    border-radius:16px;
 `
-const TopTourCard =()=>{
+const TopTourCard =({cityobj})=>{
+    const {t} = useTranslation();
     return(
     <TopTourcard>
-    <img src="/assetts/img/image (8).png" width="350px" alt=""/>
+    <img src={`/assetts/img/${cityobj.photo}`} width="100%" alt=""/>
     <Toplinergradient></Toplinergradient>
-    <span className="top-span">Japan</span>
-    <h4 className="top-title">Japan</h4>
-    <p className="top-text">10 Popular Places</p>  
+    <span className="top-span">{cityobj.country}</span>
+    <h4 className="top-title">{cityobj.name}</h4>
+    <p className="top-text">{cityobj.place_count}  {t("popularplaces")}</p>  
     </TopTourcard>
     
 

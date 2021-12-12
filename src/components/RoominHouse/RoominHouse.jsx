@@ -30,6 +30,7 @@ line-height: 27px;
 letter-spacing: 0em;
 text-align: left;
 color:${(props)=>props.theme.tabtitle};
+padding-bottom:10px;
 
 
 `
@@ -63,7 +64,7 @@ border-bottom:2px solid rgba(230, 232, 236, 1);
 padding-bottom:61px;
 `
 const FeaturesSpan = styled.span`
-margin:0 45px 0 10px;
+margin:0 40px 0 10px;
 font-family: DM Sans;
 font-size: 16px;
 font-style: normal;

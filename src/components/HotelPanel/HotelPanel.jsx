@@ -10,7 +10,9 @@ import {RiParkingBoxLine} from "react-icons/ri";
 import {MdOutlineLocalOffer} from "react-icons/md"
 import {IoIosGlobe} from "react-icons/io"
 import "./HotelPanel.css";
-import {FiDatabase} from "react-icons/fi"
+import {FiDatabase} from "react-icons/fi";
+import {Link} from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 
 const HotelSet = styled.div`
@@ -18,13 +20,21 @@ const HotelSet = styled.div`
 border-radius: 20px;
 border: 1px solid #E7ECF3;
 box-sizing: border-box;
- width:970px;
- margin-bottom:50px;
- margin-left:53px;
+margin-bottom:50px;
+
 
 
 `
 const HotelLeft = styled.div`
+width:420px;
+height:471px;
+border-radius:20px;
+`
+const HotelImg = styled.img`
+width:100%;
+height:100%;
+border-bottom-left-radius: 20px;
+border-top-left-radius:20px;
 `
 const HotelRight= styled.div`
 padding:30px;
@@ -99,7 +109,7 @@ padding-right : 19px ;
 `
 const HotelFligth = styled.span`
 display: block ;
-padding-top:15px;
+padding:15px 0 35px 0;
 color:${(props)=>props.theme.cityname}
 `
 const HoterlOffer = styled.span`
@@ -115,8 +125,7 @@ padding:6px 0;
 
 `
 const HotelBtn = styled.button`
-width: 176px;
-height: 49px;;
+
 padding:4px 20px;
 border-radius:37px;
 background-color:${(props)=>props.theme.buttonColor};
@@ -131,9 +140,8 @@ color:${(props)=>props.theme.titleColor}
 
 `
 const HotelBook = styled.button`
-width: 176px;
-height: 49px;;
-padding:4px 20px;
+
+padding:10px 20px;
 border-radius:37px;
 background-color: rgba(59, 113, 254, 1);
 border:none;
@@ -154,123 +162,44 @@ font-weight: 500;
 line-height: 24px;
 color:rgba(132, 135, 139, 1);
 `
-const HotelPanel = ()=>{
+
+const HotelPanel = ({hotelObj})=>{
+    const {t} = useTranslation();
     return(
 
         <HotelSet>
             <HotelLeft>
-                <img src = "/assetts/img/image (10).png" width="100%" height="100%" alt=""/>
+                <HotelImg  src = {`/assetts/img/${hotelObj.photo}`}   alt=""/>
             </HotelLeft>
             <HotelRight>
-                <HotelTitle>Zuich, Switzerland</HotelTitle>
+                <HotelTitle>{hotelObj.name}</HotelTitle>
                <HotelRaiting>
                 <AiFillStar style={{ color: "#FFD166", fontSize: "22px" }} />
-               <TrandingRaiting>4.91<span className="tranding-number">  (122 reviews)</span></TrandingRaiting>
-               <HotelsCity><CgFlagAlt style={{ color: "rgba(132, 135, 139, 1)", fontSize: "13px" }}/>Zuich town, Switzerland</HotelsCity>
+               <TrandingRaiting>{hotelObj.rating}<span className="tranding-number">  ({hotelObj.reviews} {t("reviews")})</span></TrandingRaiting>
+               <HotelsCity><CgFlagAlt style={{ color: "rgba(132, 135, 139, 1)", fontSize: "13px" }}/>{hotelObj.location}</HotelsCity>
                </HotelRaiting>
 
                < HotelLocation>
-               <HotelPlace><GrLocation style={{ color: "rgba(132, 135, 139, 1)", fontSize: "16px" }}  /> Zuich Hotel, Switzerland</HotelPlace>
-               <HotelPlace><BsCalendar2Range style={{ color: "rgba(132, 135, 139, 1)", fontSize: "16px" }}/> 15.05.2021-16.05.2021</HotelPlace>
+               <HotelPlace><GrLocation style={{ color: "rgba(132, 135, 139, 1)", fontSize: "16px", marginRght:"10px" }}  /> {hotelObj.location}</HotelPlace>
+               <HotelPlace><BsCalendar2Range style={{ color: "rgba(132, 135, 139, 1)", fontSize: "16px" , marginRght:"10px"}}/> 15.05.2021-16.05.2021</HotelPlace>
                </HotelLocation>
 
-               <HotelFligth><MdFlight style={{ color: "rgba(132, 135, 139, 1)"}}/> Depature from zuich </HotelFligth>
+               <HotelFligth><MdFlight style={{ color: "rgba(132, 135, 139, 1)", marginRght:"10px"}}/> {t("depture")} </HotelFligth>
                <HotelOrder>
                <HotelComfort>
-                   <HoterlOffer><AiOutlineWifi style={{ color: "rgba(132, 135, 139, 1)" , fontSize: "16px"}}/>Free Wifi</HoterlOffer>
-                   <HoterlOffer><RiParkingBoxLine style={{ color: "rgba(132, 135, 139, 1)" , fontSize: "16px"}}/>Free parking</HoterlOffer>
-                   <HoterlOffer><MdOutlineLocalOffer style={{ color: "rgba(132, 135, 139, 1)" , fontSize: "16px"}}/>Special offer</HoterlOffer>
-                   <HoterlOffer> <IoIosGlobe style={{ color: "rgba(132, 135, 139, 1)" , fontSize: "16px"}}/>Visit hotel website </HoterlOffer>
-                   <HoterlOffer><FiDatabase style={{ color: "rgba(132, 135, 139, 1)" , fontSize: "16px"}}/>Taking safety measures</HoterlOffer>
+                   <HoterlOffer><AiOutlineWifi style={{ color: "rgba(132, 135, 139, 1)" , fontSize: "16px", marginRight:"10px"}}/>{t("freewifi")}</HoterlOffer>
+                   <HoterlOffer><RiParkingBoxLine style={{ color: "rgba(132, 135, 139, 1)" , fontSize: "16px", marginRight:"10px"}}/>{t("parking")}</HoterlOffer>
+                   <HoterlOffer><MdOutlineLocalOffer style={{ color: "rgba(132, 135, 139, 1)" , fontSize: "16px", marginRight:"10px"}}/>{t("offer")}</HoterlOffer>
+                   <HoterlOffer> <IoIosGlobe style={{ color: "rgba(132, 135, 139, 1)" , fontSize: "16px",marginRight:"10px"}}/>{t("visit")}</HoterlOffer>
+                   <HoterlOffer><FiDatabase style={{ color: "rgba(132, 135, 139, 1)" , fontSize: "16px",marginRight:"10px"}}/>{t("saferty")}</HoterlOffer>
                </HotelComfort> 
                <HotelPrice>
-                   <HotelBtn>$320<HotelFor> For Two</HotelFor></HotelBtn>
-                   <HotelBook>Book Now</HotelBook>
+                   <HotelBtn>${hotelObj.price}<HotelFor> {t("fortwo")}</HotelFor></HotelBtn>
+                   <Link to={`/hoteldatails/${hotelObj.id}`}><HotelBook>{t("booknow")}</HotelBook></Link>
                </HotelPrice>
                </HotelOrder>
             </HotelRight>
         </HotelSet>
-
-
-
-        /* <HotelSet>
-            <HotelLeft>
-                <img src = "/assetts/img/image (10).png" width="100%" height="100%" alt=""/>
-            </HotelLeft>
-            <HotelRight>
-                <HotelTitle>Zuich, Switzerland</HotelTitle>
-               <HotelRaiting>
-                <AiFillStar style={{ color: "#FFD166", fontSize: "22px" }} />
-               <TrandingRaiting>4.91<span className="tranding-number">  (122 reviews)</span></TrandingRaiting>
-               <HotelsCity><CgFlagAlt style={{ color: "rgba(132, 135, 139, 1)", fontSize: "13px" }}/>Zuich town, Switzerland</HotelsCity>
-               </HotelRaiting>
-
-               < HotelLocation>
-               <HotelPlace><GrLocation style={{ color: "rgba(132, 135, 139, 1)", fontSize: "16px" }}  /> Zuich Hotel, Switzerland</HotelPlace>
-               <HotelPlace><BsCalendar2Range style={{ color: "rgba(132, 135, 139, 1)", fontSize: "16px" }}/> 15.05.2021-16.05.2021</HotelPlace>
-               </HotelLocation>
-
-               <HotelFligth><MdFlight style={{ color: "rgba(132, 135, 139, 1)"}}/> Depature from zuich </HotelFligth>
-               <HotelOrder>
-               <HotelComfort>
-                   <HoterlOffer><AiOutlineWifi style={{ color: "rgba(132, 135, 139, 1)" , fontSize: "16px"}}/>Free Wifi</HoterlOffer>
-                   <HoterlOffer><RiParkingBoxLine style={{ color: "rgba(132, 135, 139, 1)" , fontSize: "16px"}}/>Free parking</HoterlOffer>
-                   <HoterlOffer><MdOutlineLocalOffer style={{ color: "rgba(132, 135, 139, 1)" , fontSize: "16px"}}/>Special offer</HoterlOffer>
-                   <HoterlOffer> <IoIosGlobe style={{ color: "rgba(132, 135, 139, 1)" , fontSize: "16px"}}/>Visit hotel website </HoterlOffer>
-                   <HoterlOffer><AiOutlineSafety style={{ color: "rgba(132, 135, 139, 1)" , fontSize: "16px"}}/>Taking safety measures</HoterlOffer>
-               </HotelComfort> 
-               <HotelPrice>
-                   <HotelBtn>$320<HotelFor> For Two</HotelFor></HotelBtn>
-                   <HotelBook>Book Now</HotelBook>
-               </HotelPrice>
-               </HotelOrder>
-            </HotelRight>
-        </HotelSet>
-
-
-        <HotelSet>
-            <HotelLeft>
-                <img src = "/assetts/img/image (10).png" width="100%" height="100%" alt=""/>
-            </HotelLeft>
-            <HotelRight>
-                <HotelTitle>Zuich, Switzerland</HotelTitle>
-               <HotelRaiting>
-                <AiFillStar style={{ color: "#FFD166", fontSize: "22px" }} />
-               <TrandingRaiting>4.91<span className="tranding-number">  (122 reviews)</span></TrandingRaiting>
-               <HotelsCity><CgFlagAlt style={{ color: "rgba(132, 135, 139, 1)", fontSize: "13px" }}/>Zuich town, Switzerland</HotelsCity>
-               </HotelRaiting>
-
-               < HotelLocation>
-               <HotelPlace><GrLocation style={{ color: "rgba(132, 135, 139, 1)", fontSize: "16px" }}  /> Zuich Hotel, Switzerland</HotelPlace>
-               <HotelPlace><BsCalendar2Range style={{ color: "rgba(132, 135, 139, 1)", fontSize: "16px" }}/> 15.05.2021-16.05.2021</HotelPlace>
-               </HotelLocation>
-
-               <HotelFligth><MdFlight style={{ color: "rgba(132, 135, 139, 1)"}}/> Depature from zuich </HotelFligth>
-               <HotelOrder>
-               <HotelComfort>
-                   <HoterlOffer><AiOutlineWifi style={{ color: "rgba(132, 135, 139, 1)" , fontSize: "16px"}}/>Free Wifi</HoterlOffer>
-                   <HoterlOffer><RiParkingBoxLine style={{ color: "rgba(132, 135, 139, 1)" , fontSize: "16px"}}/>Free parking</HoterlOffer>
-                   <HoterlOffer><MdOutlineLocalOffer style={{ color: "rgba(132, 135, 139, 1)" , fontSize: "16px"}}/>Special offer</HoterlOffer>
-                   <HoterlOffer> <IoIosGlobe style={{ color: "rgba(132, 135, 139, 1)" , fontSize: "16px"}}/>Visit hotel website </HoterlOffer>
-                   <HoterlOffer><AiOutlineSafety style={{ color: "rgba(132, 135, 139, 1)" , fontSize: "16px"}}/>Taking safety measures</HoterlOffer>
-               </HotelComfort> 
-               <HotelPrice>
-                   <HotelBtn>$320<HotelFor> For Two</HotelFor></HotelBtn>
-                   <HotelBook>Book Now</HotelBook>
-               </HotelPrice>
-               </HotelOrder>
-            </HotelRight>
-        </HotelSet> */
-
-
-
-
-
-
-
-
-
-
 
     )
 }

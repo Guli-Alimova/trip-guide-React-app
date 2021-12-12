@@ -3,7 +3,8 @@ import styled from "styled-components";
 import { useTranslation } from 'react-i18next';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 // import "./PriceList.css";
-import Form from 'react-bootstrap/Form'
+import Form from 'react-bootstrap/Form';
+import {Link} from "react-router-dom";
 
 const PriceCheck = styled.div`
 padding:30px 46px;
@@ -54,11 +55,13 @@ border:none;
 `
 const Pricewrapper = styled.div`
 display:flex;
-flex-wrap:wrap;
+justify-content: space-between;
 padding:20px 0;
+
 
 `
 const ChackSpan = styled.div`
+
 
 `
 const Checktitle = styled.span`
@@ -170,12 +173,13 @@ text-align:center;
 display:block;
 margin-top:12px;
 `
-const PriceList =()=>{
+const PriceList =({prop})=>{
+
     const {t} = useTranslation();
     return(
         <PriceCheck>
             <PriceHeader>
-                <Price>$142<span style={{color:"#84878B"}}>/night</span></Price>
+                <Price>${prop.price}<span style={{color:"#84878B"}}>/{t("kecha")}</span></Price>
                 <PriceTwo>185$</PriceTwo>
                 <PriceBtn>20% OFF</PriceBtn>
             </PriceHeader>
@@ -188,7 +192,7 @@ const PriceList =()=>{
               showWeekNumbers: true,
               todayButton: 'Today',
               }}
-              />
+              style={{backgroundColor:"rgba(244, 245, 246, 1)", border:"none", borderRadius:"10px",width:"152px", padding:"14px"}} />
                </ChackSpan>
                 <ChackSpan>
                 < Checktitle>{t( "check_out")}</Checktitle>
@@ -198,12 +202,12 @@ const PriceList =()=>{
               showWeekNumbers: true,
               todayButton: 'Today',
               }}
-              /> 
+              style={{backgroundColor:"rgba(244, 245, 246, 1)", border:"none" , borderRadius:"10px" ,width:"152px", padding:"14px"}}/> 
               </ChackSpan>
             </Pricewrapper>
             <GuestTitle>{t("guest")}</GuestTitle>
-            <Form.Select aria-label="Default select example">
-            <option>{t("personNumber")}</option>
+            <Form.Select aria-label="Default select example"style={{marginBottom:"20px", color:"rgba(119, 126, 144, 1)", backgroundColor:"rgba(244, 245, 246, 1)", border:"none"}}>
+            <option >{t("personNumber")}</option>
             <option value="1"></option>
             <option value="2"></option>
             <option value="3"></option>
@@ -258,7 +262,7 @@ const PriceList =()=>{
                 <GuestTitle>{t("total")}</GuestTitle>
                 <Totalcost>$300</Totalcost>
             </Totalprice>
-            <BookNow>{t("booknow")}</BookNow>
+            <Link to={`/hotelconfirm/${prop.id}`}><BookNow>{t("booknow")}</BookNow></Link>
             <Charged>{t("charged")}</Charged>
 
 
